@@ -29,7 +29,8 @@ Regarding `InstantMeshLoader`, there are four configurations for checkpoints, pl
 
 A simple workflow looks like:
 ![simple-connection](docs/overall.png) 
-And you can find it at [simple-workflow](instantMesh-workflow.json)
+And you can find it at [simple-workflow](instantMesh-workflow.json)  
+After generated, you could find results, mesh or texture, under `ComfyUI/custom_nodes/ComfyUI-InstantMesh/output` folder.
 
 ## Credit
 - [TencentARC/InstantMesh](https://github.com/TencentARC/InstantMesh) - Efficient 3D Mesh Generation from a Single Image with Sparse-view Large Reconstruction Models
