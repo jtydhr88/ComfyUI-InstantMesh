@@ -19,8 +19,10 @@ import datetime
 import sys
 
 comfy_path = os.path.dirname(folder_paths.__file__)
-print(comfy_path)
-sys.path.append(f'{comfy_path}/custom_nodes/ComfyUI-InstantMesh')
+
+instant_mesh_path = f'{comfy_path}/custom_nodes/ComfyUI-InstantMesh'
+
+sys.path.append(instant_mesh_path)
 
 from src.utils.train_util import instantiate_from_config
 from src.utils.camera_util import (
@@ -31,7 +33,6 @@ from src.utils.camera_util import (
 from src.utils.mesh_util import save_obj, save_obj_with_mtl
 from src.utils.infer_util import remove_background, resize_foreground
 from src.utils.infer_util import save_video
-
 
 def get_render_cameras(batch_size=1, M=120, radius=4.0, elevation=20.0, is_flexicubes=False):
     """
@@ -385,13 +386,16 @@ class InstantMeshRun:
 
             timestamp = now.strftime("%Y%m%d_%H%M%S")
 
-            img_file_name = "InstantMesh_" + timestamp + ".png"
+            img_file_name = f'InstantMesh_{timestamp}.png'
 
-            img.save(img_file_name)
+            tmp_path = f'{instant_mesh_path}/tmp'
 
-            cwd = os.getcwd()
+            if not os.path.exists(tmp_path):
+                os.makedirs(tmp_path)
 
-            img_full_path = os.path.join(cwd, img_file_name)
+            img_full_path = f'{tmp_path}/{img_file_name}'
+
+            img.save(img_full_path)
 
         preview_img_path, mesh_path_idx, video_path_idx = run_InstantMesh(
             model, config, img_full_path, diffusion_steps, view, export_texmap, save_video, remove_bg)
