@@ -1,13 +1,13 @@
 {
-  "last_node_id": 14,
-  "last_link_id": 17,
+  "last_node_id": 25,
+  "last_link_id": 35,
   "nodes": [
     {
-      "id": 10,
+      "id": 24,
       "type": "InstantMeshLoader",
       "pos": [
-        749.4204467773437,
-        152.58995916748043
+        1053,
+        12
       ],
       "size": {
         "0": 315,
@@ -21,7 +21,7 @@
           "name": "model",
           "type": "InstantMeshModel",
           "links": [
-            14
+            33
           ],
           "shape": 3,
           "slot_index": 0
@@ -30,7 +30,7 @@
           "name": "config",
           "type": "InstantMeshConfig",
           "links": [
-            15
+            34
           ],
           "shape": 3,
           "slot_index": 1
@@ -40,20 +40,20 @@
         "Node name for S&R": "InstantMeshLoader"
       },
       "widgets_values": [
-        "instant-mesh-large"
+        "instant-mesh-base"
       ]
     },
     {
-      "id": 12,
+      "id": 25,
       "type": "LoadImage",
       "pos": [
-        737,
-        305
+        1035,
+        206
       ],
-      "size": {
-        "0": 315,
-        "1": 314
-      },
+      "size": [
+        315,
+        314
+      ],
       "flags": {},
       "order": 1,
       "mode": 0,
@@ -62,7 +62,7 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            16
+            35
           ],
           "shape": 3,
           "slot_index": 0
@@ -78,16 +78,16 @@
         "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "cartoon_duck.jpg",
+        "chair_comfort (1).jpg",
         "image"
       ]
     },
     {
-      "id": 14,
+      "id": 22,
       "type": "InstantMeshRun",
       "pos": [
-        1135,
-        157
+        1459,
+        112
       ],
       "size": {
         "0": 315,
@@ -100,17 +100,17 @@
         {
           "name": "model",
           "type": "InstantMeshModel",
-          "link": 14
+          "link": 33
         },
         {
           "name": "config",
           "type": "InstantMeshConfig",
-          "link": 15
+          "link": 34
         },
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 16
+          "link": 35
         }
       ],
       "outputs": [
@@ -118,7 +118,7 @@
           "name": "images",
           "type": "IMAGE",
           "links": [
-            17
+            32
           ],
           "shape": 3,
           "slot_index": 0
@@ -126,8 +126,11 @@
         {
           "name": "mesh_path",
           "type": "STRING",
-          "links": null,
-          "shape": 3
+          "links": [
+            31
+          ],
+          "shape": 3,
+          "slot_index": 1
         },
         {
           "name": "video_path",
@@ -149,15 +152,47 @@
     },
     {
       "id": 13,
+      "type": "[Comfy3D] Preview 3DMesh",
+      "pos": [
+        1841,
+        286
+      ],
+      "size": [
+        600,
+        500
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mesh_file_path",
+          "type": "STRING",
+          "link": 31,
+          "widget": {
+            "name": "mesh_file_path"
+          }
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "[Comfy3D] Preview 3DMesh"
+      },
+      "widgets_values": [
+        "",
+        null
+      ]
+    },
+    {
+      "id": 23,
       "type": "PreviewImage",
       "pos": [
-        1541,
-        149
+        1845,
+        -66
       ],
-      "size": {
-        "0": 210,
-        "1": 246
-      },
+      "size": [
+        210,
+        246
+      ],
       "flags": {},
       "order": 3,
       "mode": 0,
@@ -165,7 +200,7 @@
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 17
+          "link": 32
         }
       ],
       "properties": {
@@ -175,35 +210,43 @@
   ],
   "links": [
     [
-      14,
-      10,
+      31,
+      22,
+      1,
+      13,
       0,
-      14,
+      "STRING"
+    ],
+    [
+      32,
+      22,
+      0,
+      23,
+      0,
+      "IMAGE"
+    ],
+    [
+      33,
+      24,
+      0,
+      22,
       0,
       "InstantMeshModel"
     ],
     [
-      15,
-      10,
+      34,
+      24,
       1,
-      14,
+      22,
       1,
       "InstantMeshConfig"
     ],
     [
-      16,
-      12,
+      35,
+      25,
       0,
-      14,
+      22,
       2,
-      "IMAGE"
-    ],
-    [
-      17,
-      14,
-      0,
-      13,
-      0,
       "IMAGE"
     ]
   ],
