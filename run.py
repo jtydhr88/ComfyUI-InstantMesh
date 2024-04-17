@@ -16,8 +16,6 @@ from huggingface_hub import hf_hub_download
 from diffusers import DiffusionPipeline, EulerAncestralDiscreteScheduler
 import datetime
 
-import sys
-
 comfy_path = os.path.dirname(folder_paths.__file__)
 
 instant_mesh_path = f'{comfy_path}/custom_nodes/ComfyUI-InstantMesh'
@@ -80,13 +78,15 @@ from pathlib import Path
 def load_InstantMeshModel(config_from_node):
     original_directory = os.getcwd()
 
-    target_directory = os.path.join(original_directory, r"ComfyUI\custom_nodes\ComfyUI-InstantMesh")
+    python_path = sys.executable
 
-    scripts_directory = os.path.join(original_directory, r"python_embeded\Scripts")
+    python_dir = os.path.dirname(python_path)
 
-    os.environ['PATH'] += os.pathsep + scripts_directory
+    scripts_dir = os.path.join(python_dir, 'Scripts')
 
-    os.chdir(target_directory)
+    os.environ['PATH'] += os.pathsep + scripts_dir
+
+    os.chdir(instant_mesh_path)
 
     try:
         ###############################################################################
@@ -130,13 +130,7 @@ def run_InstantMesh(model, config_from_node, input_path_from_node, diffusion_ste
 
     original_directory = os.getcwd()
 
-    target_directory = os.path.join(original_directory, r"ComfyUI\custom_nodes\ComfyUI-InstantMesh")
-
-    scripts_directory = os.path.join(original_directory, r"python_embeded\Scripts")
-
-    os.environ['PATH'] += os.pathsep + scripts_directory
-
-    os.chdir(target_directory)
+    os.chdir(instant_mesh_path)
 
     try:
         #seed_everything(seed)
