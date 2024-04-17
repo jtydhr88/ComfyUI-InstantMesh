@@ -35,9 +35,10 @@ And you can find it at [simple-workflow](instantMesh-workflow.json)
 After generated, you could find results, mesh or texture, under `ComfyUI/custom_nodes/ComfyUI-InstantMesh/output` folder.
 
 Another workflow I provided - [example-workflow](example-workflow.json), generate 3D mesh from ComfyUI generated image, it requires:
-1. main checkpoint - [ReV Animated](https://civitai.com/models/7371/rev-animated)
+1. Main checkpoint - [ReV Animated](https://civitai.com/models/7371/rev-animated)
 2. Lora - [Clay Render Style](https://civitai.com/models/108464/clay-render-style)
-It will generate gypsum stype 3D model: 
+
+It will generate gypsum style 3D model: 
 ![example-workflow1](docs/example-workflow1.png) 
 
 ## Credit
