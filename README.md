@@ -6,7 +6,9 @@
 
 ## Installation
 
-First, this extension depends on [ComfyUI-3D-Pack](https://github.com/MrForExample/ComfyUI-3D-Pack), please install it if not, and make sure it works well:
+Make sure you also install [Visual Studio Build Tools](https://visualstudio.microsoft.com/downloads/?q=build+tools).
+![overall](docs/vstool.png)
+This extension depends on [ComfyUI-3D-Pack](https://github.com/MrForExample/ComfyUI-3D-Pack), please install it if not, and make sure it works well:
 1. stop ComfyUI if it is running
 2. goto `ComfyUI/custom_nodes` dir in terminal(cmd)
 3. `git clone https://github.com/MrForExample/ComfyUI-3D-Pack`
