@@ -1,3 +1,4 @@
+(This repo is archived due to [ComfyUI-3D-Pack](https://github.com/MrForExample/ComfyUI-3D-Pack) supports InstantMesh, please check 3D-Pack directly if you need it)
 # ComfyUI InstantMesh
 
 **ComfyUI InstantMesh** is custom nodes that running [TencentARC/InstantMesh](https://github.com/TencentARC/InstantMesh) into ComfyUI
@@ -47,6 +48,9 @@ It will generate gypsum style 3D model:
 - [ComfyUI-3D-Pack](https://github.com/MrForExample/ComfyUI-3D-Pack) - An extensive node suite that enables ComfyUI to process 3D inputs (Mesh & UV Texture, etc) using cutting edge algorithms (3DGS, NeRF, etc.)
 
 ## My extensions for ComfyUI
+- [ComfyUI-LayerDivider](https://github.com/jtydhr88/ComfyUI-LayerDivider) - ComfyUI InstantMesh is custom nodes that generating layered psd files inside ComfyUI
+- [ComfyUI-InstantMesh](https://github.com/jtydhr88/ComfyUI-InstantMesh) - ComfyUI InstantMesh is custom nodes that running InstantMesh into ComfyUI
+- [ComfyUI-ImageMagick](https://github.com/jtydhr88/ComfyUI-ImageMagick) - This extension implements custom nodes that integreated ImageMagick into ComfyUI
 - [ComfyUI-Workflow-Encrypt](https://github.com/jtydhr88/ComfyUI-Workflow-Encrypt) - Encrypt your comfyui workflow with key
 
 ## My extensions for stable diffusion webui
